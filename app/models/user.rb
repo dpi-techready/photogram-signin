@@ -23,6 +23,10 @@ class User < ApplicationRecord
   # from bcrypt  
   has_secure_password
 
+  # has_secure_password is doing this
+  # attr_accesor :password
+  # attr_accesor :password_confirmation
+
   def comments
     return Comment.where({ :author_id => self.id })
   end
