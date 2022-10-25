@@ -16,15 +16,22 @@
   <body>
     <nav>
       <ul>
+          <!-- show sign up, sign in and sign out conditionally -->
+          <%# if session.fetch(:user_id) == User.find(session[:user_id]) %>
+          <%# if session.fetch(:user_id) == session[:user_id] %>
           <li>
             <a href="/user_sign_up">Sign Up</a>
           </li>
+          <%# end %>
+          <%# if !is_logged_in? %>
           <li>
             <a href="/user_sign_in">Sign In</a>
           </li>
+          <%# else %>
           <li>
             <a href="/user_sign_out">Sign Out</a>
           </li>
+          <%# end %>
           <li>
             <a href="/users">Users</a>
           </li>
